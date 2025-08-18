@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!--
+        MODPC 数据共享平台 - 静态网页结构说明
+        作者: Julien Chaos
+        说明: 本网页包含三个主要区块，分别链接到子页面。
+        用途: 为 MODPC 社区提供公开透明的信息展示。
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODPC 数据共享平台</title>
+    <style>
+        /* 全局样式 */
+        body {
+            margin: 0;
+            font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: #f9fafb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: linear-gradient(135deg, #4f46e5, #3b82f6);
+            color: white;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+        }
+
+        .section-card h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #1f2937;
+        }
+
+        .section-card p {
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+        }
+
+        .section-card a {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s ease;
+        }
+
+        .section-card a:hover {
+            background: #2563eb;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b7280;
+            padding: 1.5rem 0;
+            border-top: 1px solid #e5e7eb;
+            background-color: #f3f4f6;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.6rem;
+            }
+            header h2 {
+                font-size: 1rem;
+            }
+            .section-card h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MODPC 数据共享平台</h1>
+        <h2>一个用于收集和识别 MODPC 社区中不诚信行为的公开信息平台</h2>
+    </header>
+    <main>
+        <!-- 第一个区块 -->
+        <div class="section-card">
+            <h3>目前能使用的 MODPC</h3>
+            <p>点击下方按钮进入子页面，查看当前可用的 MODPC 相关网站或资源列表。</p>
+            <a href="./available/available.html">进入页面</a>
+        </div>
+
+        <!-- 第二个区块 -->
+        <div class="section-card">
+            <h3>倒卖与诈骗人员名单</h3>
+            <p>点击下方按钮进入子页面，查看公开记录的倒卖、诈骗人员名单。请注意交易安全。</p>
+            <a href="./scammers/scammers.html">进入页面</a>
+        </div>
+
+        <!-- 第三个区块 -->
+        <div class="section-card">
+            <h3>关于此网页</h3>
+            <p>点击下方按钮进入子页面，了解网页创建目的与信息来源说明。</p>
+            <a href="./about/about.html">进入页面</a>
+        </div>
+    </main>
+    <footer>
+        © 2025 MODPC 社区数据共享平台 | 信息来源于公开反馈，仅供参考
+    </footer>
+</body>
+</html>
