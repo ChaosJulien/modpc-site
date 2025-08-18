@@ -2,27 +2,38 @@
 <html lang="zh-CN">
 <head>
     <!--
-        MODPC 数据共享平台 - 静态网页结构说明
-        作者: Julien Chaos
-        说明: 本网页包含三个主要区块，分别链接到子页面。
-        用途: 为 MODPC 社区提供公开透明的信息展示。
+        MODPC 数据共享平台 - 首页
+        作者: Julien Chaos / ChaosJulien
+        创建时间: 2025
+        说明: 主页入口，链接至可用资源、诈骗名单、关于页面
+        许可: 本项目遵循知识共享原则，信息来自社区公开反馈
     -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MODPC 数据共享平台：提供可用资源列表、诈骗人员名单、社区安全提醒，由社区成员共同维护。" />
     <title>MODPC 数据共享平台</title>
     <style>
         /* 全局样式 */
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+
+        body {
             font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
             background-color: #f9fafb;
             color: #333;
             line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
+        /* 头部区域 */
         header {
             text-align: center;
-            padding: 2rem 1rem;
+            padding: 2.5rem 1rem;
             background: linear-gradient(135deg, #4f46e5, #3b82f6);
             color: white;
         }
@@ -30,61 +41,82 @@
         header h1 {
             font-size: 2.2rem;
             margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
         header h2 {
             font-size: 1.2rem;
             font-weight: 400;
             opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
+        /* 主体内容 */
         main {
+            flex: 1;
             max-width: 900px;
             margin: 2rem auto;
             padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
         }
 
         .section-card {
             background: white;
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            margin-bottom: 2rem;
-            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            padding: 1.8rem;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
         }
 
         .section-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
         }
 
         .section-card h3 {
             margin-top: 0;
             font-size: 1.5rem;
             color: #1f2937;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
+
+        /* .section-card h3::before {
+            content: "📌";
+            font-size: 1.2em;
+        } */
 
         .section-card p {
-            margin-bottom: 0.5rem;
+            margin: 0.8rem 0;
             color: #4b5563;
+            font-size: 1.05rem;
         }
 
-        .section-card a {
+        .btn {
             display: inline-block;
-            margin-top: 0.5rem;
-            padding: 0.6rem 1.2rem;
+            padding: 0.7rem 1.3rem;
             border-radius: 8px;
             background: #3b82f6;
             color: white;
             text-decoration: none;
             font-weight: 500;
             transition: background 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
 
-        .section-card a:hover {
+        .btn:hover {
             background: #2563eb;
+            transform: scale(1.03);
         }
 
+        /* 页脚 */
         footer {
             text-align: center;
             font-size: 0.9rem;
@@ -92,6 +124,16 @@
             padding: 1.5rem 0;
             border-top: 1px solid #e5e7eb;
             background-color: #f3f4f6;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         /* 响应式 */
@@ -99,11 +141,22 @@
             header h1 {
                 font-size: 1.6rem;
             }
+
             header h2 {
                 font-size: 1rem;
             }
+
+            .section-card {
+                padding: 1.4rem;
+            }
+
             .section-card h3 {
                 font-size: 1.2rem;
+            }
+
+            .btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -113,30 +166,43 @@
         <h1>MODPC 数据共享平台</h1>
         <h2>一个用于收集和识别 MODPC 社区中不诚信行为的公开信息平台</h2>
     </header>
+
     <main>
-        <!-- 第一个区块 -->
-        <div class="section-card">
+        <!-- 可用资源 -->
+        <section class="section-card" aria-labelledby="available-title">
             <h3>目前能使用的 MODPC</h3>
-            <p>点击下方按钮进入子页面，查看当前可用的 MODPC 相关网站或资源列表。</p>
-            <a href="./available/available.html">进入页面</a>
-        </div>
+            <p>点击下方按钮，查看当前仍可访问的 MODPC 社区资源，包括启动器、挂机工具、转服方案等。</p>
+            <a href="./available/available.html" class="btn" rel="noopener">
+                查看可用资源列表
+            </a>
+        </section>
 
-        <!-- 第二个区块 -->
-        <div class="section-card">
+        <!-- 诈骗名单 -->
+        <section class="section-card" aria-labelledby="scammers-title">
             <h3>倒卖与诈骗人员名单</h3>
-            <p>点击下方按钮进入子页面，查看公开记录的倒卖、诈骗人员名单。请注意交易安全。</p>
-            <a href="./scammers/scammers.html">进入页面</a>
-        </div>
+            <p>基于社区公开反馈整理的失信人员记录，用于提醒用户注意交易风险，避免财产损失。</p>
+            <a href="./scammers/scammers.html" class="btn" rel="noopener">
+                查看诈骗名单
+            </a>
+        </section>
 
-        <!-- 第三个区块 -->
-        <div class="section-card">
-            <h3>关于此网页</h3>
-            <p>点击下方按钮进入子页面，了解网页创建目的与信息来源说明。</p>
-            <a href="./about/about.html">进入页面</a>
-        </div>
+        <!-- 关于平台 -->
+        <section class="section-card" aria-labelledby="about-title">
+            <h3>关于此平台</h3>
+            <p>了解本平台的创建目的、信息来源、更新机制与免责声明，帮助你更好地使用和理解内容。</p>
+            <a href="./about/about.html" class="btn" rel="noopener">
+                了解平台详情
+            </a>
+        </section>
     </main>
+
     <footer>
-        © 2025 MODPC 社区数据共享平台 ©2025 ChaosJulien | 信息来源于公开反馈，仅供参考 | 
+        <p>
+            © 2025 MODPC 数据共享平台 | 由 <a href="https://github.com/ChaosJulien" target="_blank">ChaosJulien</a> 维护
+        </p>
+        <p style="margin-top: 0.3rem; font-size: 0.85rem; color: #9ca3af;">
+            信息来源于社区公开反馈，仅供参考，不构成法律依据。
+        </p>
     </footer>
 </body>
 </html>

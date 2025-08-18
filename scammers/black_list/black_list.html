@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MODPC 社区黑名单详情：记录倒卖、诈骗等不诚信行为人员，含行为描述与证据摘要，供用户参考。" />
+    <title>黑名单详情 - 倒卖与诈骗人员名单</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #f9fafb;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        header {
+            text-align: center;
+            padding: 1.8rem 1rem;
+            background: #ef4444;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .search-box {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .search-box input {
+            padding: 0.6rem 1rem;
+            width: 80%;
+            max-width: 400px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        thead {
+            background: #fee7e6;
+            color: #991b1b;
+        }
+
+        th, td {
+            padding: 0.8rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        th {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        tbody tr:hover {
+            background: #f8fafc;
+            transition: background 0.2s ease;
+        }
+
+        /* ========== 行为类型标签样式说明 ==========
+         * 用于区分不同类型的违规行为
+         * 每个标签对应一种行为类型，颜色语义明确：
+         *
+         * .tag-resale    → 橙黄色 → 倒卖（如售卖免费工具）
+         * .tag-scam      → 红色    → 诈骗/跑单（收钱不办事）
+         * .tag-fraud     → 深红    → 严重诈骗行为
+         * .tag-fake      → 紫色    → 虚假宣传/冒充官方
+         *
+         * 设计原则：
+         * - 圆角矩形，提升可读性
+         * - 内边距适中，避免拥挤
+         * - 字体加粗，突出显示
+         * - 颜色符合用户心理预期（红=危险，橙=警告）
+         * ---------------------------------------- */
+        .tag {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* 倒卖：售卖免费资源牟利 */
+        .tag-resale { 
+            background: #fef3c7; 
+            color: #92400e; 
+        }
+
+        /* 诈骗/跑单：收钱不办事、恶意逃避支付 */
+        .tag-scam { 
+            background: #fca5a5; 
+            color: #7f1d1d; 
+        }
+
+        /* （可扩展）严重诈骗 */
+        .tag-fraud { 
+            background: #fee7e6; 
+            color: #991b1b; 
+        }
+
+        /* （可扩展）虚假宣传 */
+        .tag-fake { 
+            background: #ddd6fe; 
+            color: #5b21b6; 
+        }
+
+        .evidence {
+            font-size: 0.9rem;
+            color: #6b7280;
+            font-style: italic;
+            max-width: 400px;
+            word-break: break-word;
+        }
+
+        .footer-info {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin: 2rem 0 1rem;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b7280;
+            padding: 1.5rem 0;
+            border-top: 1px solid #e5e7eb;
+            background: #f3f4f6;
+        }
+
+        footer a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            table { font-size: 0.9rem; }
+            th, td { padding: 0.6rem; }
+            .evidence { max-width: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🚨 黑名单详情</h1>
+        <p>基于社区反馈整理 | 请理性判断，避免误伤</p>
+    </header>
+
+    <main>
+        <!-- 搜索框（未来可加 JS 实现） -->
+        <div class="search-box">
+            <input type="text" id="search" placeholder="🔍 搜索用户名或关键词..." disabled>
+            <p style="font-size:0.85rem; color:#9ca3af; margin-top:0.5rem;">
+                当前为静态页面，搜索功能将在后续版本上线
+            </p>
+        </div>
+
+        <!-- 黑名单表格 -->
+        <table id="blacklist-table">
+            <thead>
+                <tr>
+                    <th>用户标识</th>
+                    <th>行为类型</th>
+                    <th>简要描述</th>
+                    <th>证据摘要</th>
+                    <th>记录时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 记录 1 -->
+                <tr>
+                    <td><strong>2107846505</strong>（QQ）</td>
+                    <td><span class="tag tag-resale">倒卖</span></td>
+                    <td>倒卖 NULL 挂福器</td>
+                    <td class="evidence">倒卖免费工具 NULL挂福器 ，进行非法获利</td>
+                    <td>2025-05-01</td>
+                </tr>
+
+                <!-- 记录 2 -->
+                <tr>
+                    <td><strong>1561931479</strong>（QQ）</td>
+                    <td><span class="tag tag-resale">倒卖</span></td>
+                    <td>倒卖 NULL 挂福器</td>
+                    <td class="evidence">长期倒卖免费工具 NULL挂福器 ，进行非法获利</td>
+                    <td>2025-05-01</td>
+                </tr>
+
+                <!-- 记录 3 -->
+                <tr>
+                    <td><strong>3102246281</strong>（QQ）</td>
+                    <td><span class="tag tag-scam">跑单</span></td>
+                    <td>申请远程协助后恶意刁难并跑单</td>
+                    <td class="evidence">使用 ToDesk 远程协助后拒绝支付，态度恶劣</td>
+                    <td>2025-07-20</td>
+                </tr>
+
+                <!-- 记录 4 -->
+                <tr>
+                    <td><strong>2929826514</strong>（QQ）</td>
+                    <td><span class="tag tag-resale">倒卖</span></td>
+                    <td>倒卖 NULL 挂福器</td>
+                    <td class="evidence">倒卖免费工具 NULL挂福器 ，进行非法获利</td>
+                    <td>2024-12-27</td>
+                </tr>
+
+                <!-- 记录 5 -->
+                <tr>
+                    <td><strong>3948583716 / 3153636406</strong>（QQ）</td>
+                    <td><span class="tag tag-scam">诈骗</span></td>
+                    <td>倒卖 NULL 挂福器并收钱不办事</td>
+                    <td class="evidence">收款后不提供工具或服务，拉黑用户</td>
+                    <td>2025-08-07</td>
+                </tr>
+
+                <!-- 记录 6 -->
+                <tr>
+                    <td><strong>790791904</strong>（QQ）</td>
+                    <td><span class="tag tag-resale">倒卖</span></td>
+                    <td>倒卖 NULL 挂福器</td>
+                    <td class="evidence">倒卖免费工具 NULL挂福器 ，进行非法获利</td>
+                    <td>2025-08-01</td>
+                </tr>
+
+                <!-- 记录 7 -->
+                <tr>
+                    <td><strong>399026476</strong>（QQ）</td>
+                    <td><span class="tag tag-resale">倒卖</span></td>
+                    <td>倒卖 NULL 挂福器</td>
+                    <td class="evidence">倒卖免费工具 NULL挂福器，在多个群组发布售卖信息，已被截图存证</td>
+                    <td>2025-08-01</td>
+                </tr>
+
+                <!-- 记录 8 -->
+                <tr>
+                    <td><strong>1224505477</strong>（QQ）</td>
+                    <td><span class="tag tag-resale">倒卖</span></td>
+                    <td>倒卖 NULL 挂福器</td>
+                    <td class="evidence">倒卖免费工具 NULL挂福器 ，进行非法获利</td>
+                    <td>2025-08-13</td>
+                </tr>
+
+                <!-- 记录 9 -->
+                <tr>
+                    <td><strong>3249467343 / 3821853695 / 2216809808 / 2491183255</strong>（QQ）</td>
+                    <td><span class="tag tag-resale">倒卖</span></td>
+                    <td>倒卖 NULL 挂福器</td>
+                    <td class="evidence">倒卖免费工具 NULL挂福器 ，进行非法获利，</td>
+                    <td>2025-08-17</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <div class="footer-info">
+        <p>⚠️ 本名单仅记录社区反馈案例，不保证100%准确，请谨慎判断</p>
+        <p>收录人数：<strong>13 人</strong>｜ 最后更新：<strong>2025年8月19日</strong></p>
+    </div>
+
+    <footer>
+        <p>
+            <a href="../scammers.html">&larr; 返回黑名单主页</a> |
+            <a href="../../index.html">返回首页</a>
+        </p>
+        <p style="margin-top: 0.5rem;">
+            <a href="mailto:chaosjulien@qq.com">📮 举报新线索</a> |
+            <a href="#appeal" style="color:#059669;">📝 申请移除记录（申诉）</a>
+        </p>
+        <p style="margin-top: 0.8rem; font-size: 0.85rem; color: #9ca3af;">
+            © 2025 MODPC 数据共享平台 | 维护者：ChaosJulien | 所有信息均脱敏处理
+        </p>
+    </footer>
+</body>
+</html>
