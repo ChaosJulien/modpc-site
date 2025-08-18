@@ -48,6 +48,13 @@
             margin: 0 0 1rem;
             padding-bottom: 0.5rem;
             border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card h2::before {
+            font-size: 1.2em;
         }
 
         .card p,
@@ -73,6 +80,28 @@
             border-radius: 0 8px 8px 0;
             font-size: 0.95rem;
             color: #1e40af;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.1rem;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin: 0.4rem 0.2rem 0 0;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #2563eb;
+        }
+
+        .btn-small {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.85rem;
         }
 
         footer {
@@ -103,6 +132,11 @@
             .card p {
                 font-size: 0.95rem;
             }
+            .btn {
+                display: block;
+                margin: 0.5rem 0;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -121,22 +155,25 @@
             <p>
                 随着社区发展，虚假信息、倒卖行为、恶意工具等问题逐渐增多。我们希望通过公开、可查的方式，记录和分享这些信息，构建一个更安全、可信的社区环境。
             </p>
+            <div class="highlight">
+                我们秉持中立、公平、公正，只做信息的整理者与传播者，致力于成为 MODPC 用户的“安全参考手册”。
+            </div>
         </section>
 
         <!-- 信息来源 -->
         <section class="card">
             <h2>🔍 信息来源</h2>
             <p>
-                所有内容均基于社区成员的 <strong>公开反馈</strong> 与 <strong>可验证证据</strong>（如聊天记录、交易截图、GitHub 提交历史等），经过整理后发布。
+                所有内容均基于社区成员的 <strong>公开反馈</strong> 与 <strong>可验证证据</strong>（如聊天记录、交易截图等），经过整理后发布。
             </p>
             <ul>
                 <li>Discord、QQ 群、贴吧等社交平台的公开讨论</li>
-                <li>用户主动提交的举报信息（匿名或实名）</li>
+                <li>用户主动提交的举报信息（支持匿名）</li>
                 <li>开源项目仓库的维护记录与版本对比</li>
                 <li>已有黑名单平台的交叉验证数据</li>
             </ul>
             <div class="highlight">
-                我们不会收集任何个人隐私信息，所有记录均以事件为核心，不进行人身攻击。
+                我们不会收集任何个人隐私信息，所有记录均以事件为核心，不进行人身攻击。坚持“有证据才记录，无依据不传播”原则。
             </div>
         </section>
 
@@ -144,11 +181,43 @@
         <section class="card">
             <h2>🔄 更新与维护</h2>
             <p>
-                本平台由社区成员 <strong>ChaosJulien</strong> 发起并维护，采用静态网页形式托管，确保内容不可篡改且长期可访问。
+                本平台由社区成员 <strong>ChaosJulien</strong> 发起并维护，采用静态网页形式托管（GitHub Pages），确保内容不可篡改且长期可访问。
             </p>
             <p>
-                更新频率：根据社区反馈动态更新，重大事件将及时记录。  
-                维护原则：客观、公正、可追溯、可删除（若证据不足或已和解）。
+                <strong>更新频率：</strong>根据社区反馈动态更新，重大事件将及时记录。  
+                <strong>维护原则：</strong>客观、公正、可追溯、可删除（若证据不足或已和解）。
+            </p>
+        </section>
+
+        <!-- 如何贡献 -->
+        <section class="card">
+            <h2>🤝 如何贡献</h2>
+            <p>
+                本平台依赖社区共同维护。如果你发现了新的风险行为或可用资源，欢迎提供线索：
+            </p>
+            <ul>
+                <li>提交诈骗、倒卖、虚假宣传等行为的证据</li>
+                <li>推荐稳定、安全、持续更新的工具或项目</li>
+                <li>协助校对信息、提出改进建议</li>
+            </ul>
+            <p><strong>你的每一次反馈，都在帮助更多人避免踩坑。</strong></p>
+        </section>
+
+        <!-- 联系支持 -->
+        <section class="card">
+            <h2>💬 联系与支持</h2>
+            <p>
+                如有以下情况，可通过以下方式联系维护者：
+            </p>
+            <ul>
+                <li>对记录内容有异议，希望申请复核或删除</li>
+                <li>发现信息错误或需要补充说明</li>
+                <li>希望匿名提交敏感证据</li>
+            </ul>
+            <p>
+                <a href="mailto:chaosjulien@qq.com" class="btn btn-small">📧 发送邮件</a>
+                <a href="https://discord.gg/7VUmUrxpY7" class="btn btn-small" target="_blank">💬 加入 Discord</a>
+                <!-- <a href="https://jq.qq.com/" class="btn btn-small" target="_blank">👥 QQ 群 114514</a> -->
             </p>
         </section>
 
