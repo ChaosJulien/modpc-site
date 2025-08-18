@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BigDick 转服工具 - MODPC 数据共享平台</title>
+    <meta name="description" content="BigDick 是一个用于 MODPC 布吉岛转服的开源工具，基于 GPL-3.0 协议发布，由神必人开发，ChaosJulien 维护。" />
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #f9fafb;
+            color: #333;
+            line-height: 1.7;
+        }
+        header {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            background: linear-gradient(135deg, #4f46e5, #3b82f6);
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.9rem;
+            font-weight: 600;
+        }
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem 3rem;
+        }
+        section {
+            margin-bottom: 2.5rem;
+        }
+        h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #1f2937;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            font-size: 1.2rem;
+            color: #374151;
+            margin: 1.2rem 0 0.8rem;
+        }
+        p, ul, ol {
+            margin: 0.8rem 0;
+            color: #374151;
+        }
+        .note {
+            background: #e0f2fe;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1.2rem 0;
+            color: #1e3a8a;
+        }
+        .warning {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1.2rem 0;
+            color: #92400e;
+        }
+        .success {
+            background: #dcfce7;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1.2rem 0;
+            color: #166534;
+        }
+        code {
+            background: #f3f4f6;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.95rem;
+        }
+        pre {
+            background: #f3f4f6;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 0.8rem 0;
+        }
+        .btn {
+            display: inline-block;
+            margin: 0.8rem 0;
+            padding: 0.6rem 1.2rem;
+            background: #1d4ed8;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+        .btn:hover {
+            background: #1e40af;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b7280;
+            padding: 1.5rem 0;
+            border-top: 1px solid #e5e7eb;
+            background: #f3f4f6;
+        }
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BigDick 转服工具</h1>
+        <p>布吉岛转服 · 开源 · 需自行构建</p>
+    </header>
+
+    <main>
+        <section>
+            <div class="note">
+                ℹ️ 本页面介绍 <strong>BigDick</strong> 项目，一个用于 MODPC 社区“布吉岛”服务器转服的开源工具。
+            </div>
+
+            <div class="warning">
+                ⚠️ 项目已由原作者 <strong>神必人</strong> 弃坑，目前无官方维护版本，使用需自行承担风险。
+            </div>
+        </section>
+
+        <section>
+            <h2>📌 项目概述</h2>
+            <p>
+                <strong>BigDick</strong> 是一个基于 .NET 的开源转服工具，主要用于：
+            </p>
+            <ul>
+                <li>实现从 MODPC 主服切换至“布吉岛”服务器（bjd转服）</li>
+                <li>绕过联机大厅的锁服限制，自由加入指定服务器</li>
+            </ul>
+            <p>
+                项目采用 <strong>GPL-3.0 开源协议</strong>，源码公开，允许学习与修改。
+            </p>
+        </section>
+
+        <section>
+            <h2>📦 源码与构建</h2>
+            <p>项目仓库地址：</p>
+            <a href="https://github.com/ChaosJulien/BigDick" class="btn">GitHub: ChaosJulien/BigDick</a>
+            <p>使用步骤：</p>
+            <ol>
+                <li>克隆或下载项目源码</li>
+                <li>使用 Visual Studio 或 .NET CLI 构建 <code>Mcl.Core.dll</code></li>
+                <li>将生成的 DLL 文件替换到你的 <code>MCLauncher</code> 安装目录下的对应位置</li>
+                <li>重启启动器即可生效</li>
+            </ol>
+            <div class="note">
+                💡 建议：如果你不熟悉 .NET 构建流程，可尝试在社区寻找他人编译好的版本（注意安全验证）。
+            </div>
+        </section>
+
+        <section>
+            <h2>🔧 主要功能</h2>
+            <ul>
+                <li>支持 <strong>bjd 转服</strong>，快速跳转至布吉岛服务器</li>
+                <li>实现 <strong>联机大厅反锁服</strong>，避免被勒索无法进入联机大厅服务器</li>
+                <li>轻量集成，仅需替换核心 DLL 文件</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>❓ 常见问题</h2>
+            <h3>必须自己构建吗？</h3>
+            <p>是的，该项目未提供预编译版本，需开发者自行编译 <code>Mcl.Core.dll</code>。</p>
+
+            <h3>有风险吗？</h3>
+            <p>修改启动器核心文件可能触发反作弊机制或导致崩溃，建议备份原文件。</p>
+
+            <h3>是否有替代方案？</h3>
+            <p>目前部分新版启动器已内置转服功能,如null挂福器，可优先尝试使用集成化工具，降低操作门槛。</p>
+        </section>
+
+        <section>
+            <h2>📜 更新记录</h2>
+            <ul>
+                <li><strong>2025-08-18</strong>：创建项目介绍页面，归档 BigDick 工具信息</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <a href="../available.html">&larr; 返回可用资源列表</a> |
+            <a href="/">🏠 返回首页</a>
+        </p>
+        <p>© 2025 MODPC 数据共享平台 · 由社区成员维护</p>
+    </footer>
+</body>
+</html>
