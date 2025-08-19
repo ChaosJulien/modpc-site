@@ -1,223 +1,129 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TH1LFSVEB1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-TH1LFSVEB1');
-</script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TH1LFSVEB1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-TH1LFSVEB1');
+    </script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="MODPC 社区倒卖与诈骗人员名单公示，基于社区公开反馈整理，用于提醒交易风险，请谨慎判断。" />
     <title>倒卖与诈骗人员名单 - MODPC 数据共享平台</title>
-    <style>
-        /* 全局样式 */
-        body {
-            margin: 0;
-            font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-            background: #f9fafb;
-            color: #333;
-            line-height: 1.7;
-        }
-
-        header {
-            text-align: center;
-            padding: 2rem 1rem;
-            background: linear-gradient(135deg, #4f46e5, #3b82f6);
-            color: #fff;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 1.9rem;
-            font-weight: 600;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem 3rem;
-        }
-
-        .card {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            padding: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .card h2 {
-            font-size: 1.4rem;
-            color: #1f2937;
-            margin: 0 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .card p,
-        .card ul {
-            color: #4b5563;
-            margin: 0.6rem 0;
-            font-size: 1.05rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.7rem 1.3rem;
-            margin: 0.8rem 0;
-            border-radius: 8px;
-            background: #ef4444;
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background 0.2s ease;
-            font-size: 1rem;
-        }
-
-        .btn:hover {
-            background: #dc2626;
-        }
-
-        .highlight-warning {
-            background: #fee7e6;
-            border-left: 4px solid #ef4444;
-            padding: 1rem 1.2rem;
-            margin: 1.2rem 0;
-            border-radius: 0 8px 8px 0;
-            font-size: 0.95rem;
-            color: #991b1b;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        .footer-links a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #6b7280;
-            padding: 1.5rem 0;
-            border-top: 1px solid #e5e7eb;
-            background: #f3f4f6;
-        }
-
-        footer a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 600px) {
-            .card {
-                padding: 1.4rem;
-            }
-            .card h2 {
-                font-size: 1.2rem;
-            }
-            .card p {
-                font-size: 0.95rem;
-            }
-            .btn {
-                padding: 0.6rem 1rem;
-                font-size: 0.95rem;
-            }
-        }
-    </style>
+    <meta name="description" content="MODPC 社区倒卖与诈骗人员名单公示，基于社区公开反馈整理，用于提醒交易风险，请谨慎判断。" />
+    <link rel="stylesheet" href="../assets/css/about.css" />
+    <link rel="stylesheet" href="../assets/css/available.css" />
+    <link rel="icon" href="../assets/app.ico">
 </head>
+
 <body>
-    <header>
-        <h1>⚠️ 倒卖与诈骗人员名单</h1>
+    <header class="hero">
+        <div class="container brand-row">
+            <a class="logo" href="../index.html">MODPC 数据共享平台</a>
+            <div class="actions">
+                <button id="themeToggle" class="btn theme-toggle">
+                    <span class="icon">🌙</span>
+                    <span class="text">暗色</span>
+                </button>
+                <a class="btn primary" href="https://github.com/" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <div class="container">
+            <h1 class="title">⚠️ 倒卖与诈骗人员名单</h1>
+            <p class="subtitle">收录了在 MODPC 社区中，经多人反馈或有可查证证据的倒卖、诈骗、虚假宣传等不诚信行为人员。</p>
+        </div>
     </header>
 
     <main>
-        <!-- 名单说明 -->
-        <section class="card">
-            <h2>📌 名单说明</h2>
-            <p>
-                本名单收录了在 MODPC 社区中，经 <strong>多人反馈</strong> 或 <strong>有可查证证据</strong> 的倒卖、诈骗、虚假宣传等不诚信行为人员。
+        <div class="container">
+            <p style="font-size:0.95rem; color:#9ca3af; margin-top:0;">
+                最后更新：<strong>2025年8月</strong>
             </p>
-            <p>
-                所有记录均基于社区公开讨论、聊天截图、交易记录等信息整理，旨在提醒用户注意交易风险，避免财产损失。
-            </p>
-            <div class="highlight-warning">
-                ⚠️ 本名单不构成法律判决，信息仅供参考，请自行判断，理性对待。
+
+            <div class="grid" style="margin-top:2rem;">
+                <!-- 名单说明 -->
+                <section class="card">
+                    <h2 class="resource-title">📌 名单说明</h2>
+                    <p class="resource-desc">
+                        本名单收录了在 MODPC 社区中，经 <strong>多人反馈</strong> 或 <strong>有可查证证据</strong> 的倒卖、诈骗、虚假宣传等不诚信行为人员。
+                    </p>
+                    <p class="resource-desc">
+                        所有记录均基于社区公开讨论、聊天截图、交易记录等信息整理，旨在提醒用户注意交易风险，避免财产损失。
+                    </p>
+                    <div class="highlight-warning">
+                        ⚠️ 本名单不构成法律判决，信息仅供参考，请自行判断，理性对待。
+                    </div>
+                </section>
+
+                <!-- 查看名单 -->
+                <section class="card">
+                    <h2 class="resource-title">📋 查看黑名单</h2>
+                    <p class="resource-desc">
+                        点击下方按钮，进入完整黑名单页面，查看被记录的用户名、平台 ID、行为描述与证据摘要。
+                    </p>
+                    <p class="resource-desc" style="margin: 0.5rem 0;">
+                        <strong>当前收录人数：</strong> <span style="color:#ef4444;">13 人</span>（截至 2025年8月）
+                    </p>
+                    <a href="./black_list/black_list.html" class="btn" rel="noopener">
+                        🔍 查看黑名单详情
+                    </a>
+                    <p style="font-size:0.9rem; color:#6b7280; margin-top:0.5rem;">
+                        提示：部分信息可能已过期，请结合最新社区动态判断。
+                    </p>
+                </section>
+
+                <!-- 记录原则 -->
+                <section class="card">
+                    <h2 class="resource-title">🔍 记录原则</h2>
+                    <ul class="resource-desc">
+                        <li><strong>证据优先</strong>：需提供聊天记录、转账截图、虚假承诺等可验证信息</li>
+                        <li><strong>不记隐私</strong>：不公开身份证、手机号等敏感信息</li>
+                        <li><strong>可申诉</strong>：若信息有误或已和解，可联系维护者申请移除</li>
+                        <li><strong>动态更新</strong>：名单会根据新反馈持续维护</li>
+                    </ul>
+                </section>
+
+                <!-- 如何防范 -->
+                <section class="card">
+                    <h2 class="resource-title">🛡️ 如何防范诈骗</h2>
+                    <ul class="resource-desc">
+                        <li>避免提前支付全款，使用担保交易</li>
+                        <li>警惕“低价转号”“内部渠道”等话术</li>
+                        <li>不在私聊中进行大额交易</li>
+                        <li>使用可追溯的支付方式（如微信/支付宝）</li>
+                        <li>发现可疑行为，及时截图并反馈</li>
+                    </ul>
+                </section>
             </div>
-        </section>
 
-        <!-- 查看名单 -->
-        <section class="card">
-            <h2>📋 查看黑名单</h2>
-            <p>
-                点击下方按钮，进入完整黑名单页面，查看被记录的用户名、平台 ID、行为描述与证据摘要。
+            <!-- 底部提示 -->
+            <p style="text-align:center; color:#9ca3af; font-size:0.9rem; margin-top:2rem;">
+                ⚠️ 名单信息来源于社区反馈，由社区成员维护，仅供参考。
             </p>
-            <p><strong>当前收录人数：</strong> <span style="color:#ef4444;">13 人</span>（截至 2025年8月）</p>
-            <a href="./black_list/black_list.html" class="btn" rel="noopener">
-                🔍 查看黑名单详情
-            </a>
-            <p style="font-size:0.9rem; color:#6b7280; margin-top:0.5rem;">
-                提示：部分信息可能已过期，请结合最新社区动态判断。
-            </p>
-        </section>
-
-        <!-- 记录原则 -->
-        <section class="card">
-            <h2>🔍 记录原则</h2>
-            <ul>
-                <li><strong>证据优先</strong>：需提供聊天记录、转账截图、虚假承诺等可验证信息</li>
-                <li><strong>不记隐私</strong>：不公开身份证、手机号等敏感信息</li>
-                <li><strong>可申诉</strong>：若信息有误或已和解，可联系维护者申请移除</li>
-                <li><strong>动态更新</strong>：名单会根据新反馈持续维护</li>
-            </ul>
-        </section>
-
-        <!-- 如何防范 -->
-        <section class="card">
-            <h2>🛡️ 如何防范诈骗</h2>
-            <ul>
-                <li>避免提前支付全款，使用担保交易</li>
-                <li>警惕“低价转号”“内部渠道”等话术</li>
-                <li>不在私聊中进行大额交易</li>
-                <li>使用可追溯的支付方式（如微信/支付宝）</li>
-                <li>发现可疑行为，及时截图并反馈</li>
-            </ul>
-        </section>
+        </div>
     </main>
 
+    <div class="footer-info">
+        <p>收录人数：<strong>13 人</strong>｜ 最后更新：<strong>2025年8月</strong></p>
+    </div>
+
+    <!-- 页脚 -->
     <footer>
-        <p>
-            <a href="../index.html">&larr; 返回首页</a>
-        </p>
-        <div class="footer-links">
-            <a href="../about/about.html">关于平台</a>
-            <a href="../about/about.html">举报线索</a>
-            <a href="../about/about.html" style="color:#059669;">申请移除（申诉）</a>
+        <div class="container">
+            <div class="footer-inner">
+                <p><a href="../index.html">&larr; 返回首页</a></p>
+                <p>© <span id="year">2025</span> MODPC 数据共享平台 | 信息来源于社区反馈 · 由社区成员维护</p>
+            </div>
         </div>
-        <p style="margin-top: 0.8rem; font-size: 0.85rem; color: #9ca3af;">
-            © 2025 MODPC 数据共享平台 | 信息来源于社区反馈 · 由社区成员维护
-        </p>
     </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // 自动设置年份
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

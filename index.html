@@ -1,219 +1,81 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+  
 <head>
+  <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TH1LFSVEB1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TH1LFSVEB1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-TH1LFSVEB1');
-</script>
-
-
-    <!--
-        MODPC 数据共享平台 - 首页
-        作者: Julien Chaos / ChaosJulien
-        创建时间: 2025
-        说明: 主页入口，链接至可用资源、诈骗名单、关于页面
-        许可: 本项目遵循知识共享原则，信息来自社区公开反馈
-    -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="MODPC 数据共享平台：提供可用资源列表、诈骗人员名单、社区安全提醒，由社区成员共同维护。" />
-    <title>MODPC 数据共享平台</title>
-    <style>
-        /* 全局样式 */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        function gtag() {
+            dataLayer.push(arguments);
         }
+        gtag('js', new Date());
+        gtag('config', 'G-TH1LFSVEB1');
+    </script>
 
-        body {
-            font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-            background-color: #f9fafb;
-            color: #333;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
 
-        /* 头部区域 */
-        header {
-            text-align: center;
-            padding: 2.5rem 1rem;
-            background: linear-gradient(135deg, #4f46e5, #3b82f6);
-            color: white;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MODPC 数据共享平台</title>
+  <meta name="description" content="MODPC 数据共享平台：提供可用资源列表、诈骗人员名单、社区安全提醒，由社区成员共同维护。" />
+  <meta name="theme-color" content="#111827" />
 
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
+  <!-- 引入外部 CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 
-        header h2 {
-            font-size: 1.2rem;
-            font-weight: 400;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* 主体内容 */
-        main {
-            flex: 1;
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .section-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            padding: 1.8rem;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            position: relative;
-        }
-
-        .section-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-        }
-
-        .section-card h3 {
-            margin-top: 0;
-            font-size: 1.5rem;
-            color: #1f2937;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        /* .section-card h3::before {
-            content: "📌";
-            font-size: 1.2em;
-        } */
-
-        .section-card p {
-            margin: 0.8rem 0;
-            color: #4b5563;
-            font-size: 1.05rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.7rem 1.3rem;
-            border-radius: 8px;
-            background: #3b82f6;
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background 0.2s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn:hover {
-            background: #2563eb;
-            transform: scale(1.03);
-        }
-
-        /* 页脚 */
-        footer {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #6b7280;
-            padding: 1.5rem 0;
-            border-top: 1px solid #e5e7eb;
-            background-color: #f3f4f6;
-            margin-top: auto;
-        }
-
-        footer a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* 响应式 */
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.6rem;
-            }
-
-            header h2 {
-                font-size: 1rem;
-            }
-
-            .section-card {
-                padding: 1.4rem;
-            }
-
-            .section-card h3 {
-                font-size: 1.2rem;
-            }
-
-            .btn {
-                padding: 0.6rem 1rem;
-                font-size: 0.95rem;
-            }
-        }
-    </style>
+  <!-- Favicon 可选 -->
+  <link rel="icon" href="assets/app.ico">
 </head>
 <body>
-    <header>
-        <h1>MODPC 数据共享平台</h1>
-        <h2>为 MODPC 用户提供可信工具推荐、诈骗预警与使用指南，共建更安全的社区环境。</h2>
-    </header>
+  <header class="hero">
+    <div class="container brand-row">
+      <a class="logo" href="./">MODPC 数据共享平台</a>
+      <div class="actions">
+        <button id="themeToggle" class="btn theme-toggle">
+          <span class="icon">🌙</span>
+          <span class="text">暗色</span>
+        </button>
+        <a class="btn primary" href="https://github.com/" target="_blank">GitHub</a>
+      </div>
+    </div>
+    <div class="container">
+      <h1 class="title">为 MODPC 用户提供可信工具推荐、诈骗预警与使用指南</h1>
+      <p class="subtitle">社区成员共同维护，专注可用性与安全性。</p>
+    </div>
+  </header>
 
-    <main>
-        <!-- 可用资源 -->
-        <section class="section-card" aria-labelledby="available-title">
-            <h3>目前能使用的 MODPC</h3>
-            <p>点击下方按钮，查看当前仍可访问的 MODPC 社区资源，包括启动器、挂机工具、转服方案等。</p>
-            <a href="./available/available.html" class="btn" rel="noopener">
-                查看可用资源列表
-            </a>
-        </section>
+  <main class="container">
+    <section class="grid">
+      <article class="card">
+        <h3>目前能使用的 MODPC</h3>
+        <p>查看仍可访问的 MODPC 相关资源：启动器、挂机工具、转服方案等。</p>
+        <a class="link" href="./available/available.html">查看可用资源</a>
+      </article>
+      <article class="card">
+        <h3>倒卖与诈骗人员名单</h3>
+        <p>基于社区公开反馈整理的失信记录，提醒用户注意交易风险。</p>
+        <a class="link" href="./scammers/scammers.html">查看名单</a>
+      </article>
+      <article class="card">
+        <h3>关于此平台</h3>
+        <p>了解平台的创建目的、信息来源、更新机制与免责声明。</p>
+        <a class="link" href="./about/about.html">了解详情</a>
+      </article>
+    </section>
+  </main>
 
-        <!-- 诈骗名单 -->
-        <section class="section-card" aria-labelledby="scammers-title">
-            <h3>倒卖与诈骗人员名单</h3>
-            <p>基于社区公开反馈整理的失信人员记录，用于提醒用户注意交易风险，避免财产损失。</p>
-            <a href="./scammers/scammers.html" class="btn" rel="noopener">
-                查看诈骗名单
-            </a>
-        </section>
-
-        <!-- 关于平台 -->
-        <section class="section-card" aria-labelledby="about-title">
-            <h3>关于此平台</h3>
-            <p>了解本平台的创建目的、信息来源、更新机制与免责声明，帮助你更好地使用和理解内容。</p>
-            <a href="./about/about.html" class="btn" rel="noopener">
-                了解平台详情
-            </a>
-        </section>
-    </main>
-
-    <footer>
-        <p>
-            © 2025 MODPC 数据共享平台 · 由社区成员维护
-        </p>
-        <p style="margin-top: 0.3rem; font-size: 0.85rem; color: #9ca3af;">
-            信息来源于社区公开反馈，仅供参考，不构成法律依据。
-        </p>
+  <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <p>© <span id="year">2025</span> MODPC 数据共享平台 | 由社区成员维护 |
+                    <a>信息来源于社区公开反馈，仅供参考，不构成法律依据。</a>
+                </p>
+            </div>
+        </div>
     </footer>
+
+  <!-- 引入外部 JS -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
