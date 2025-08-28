@@ -12,6 +12,9 @@ function insertSecurityAdvice() {
                 <li><strong>定期检查授权状态</strong>：如发现异常登录或工具失效，请及时联系维护者并更换凭证。</li>
                 <li><strong>关闭杀毒误报？谨慎操作</strong>：若杀毒软件报警，优先上传至 VirusTotal 检测，不建议直接关闭防护。</li>
             </ul>
+            <p class="back-to-top">
+                <a href="#top">回到顶部 ↑</a>
+            </p>
         </section>
     `;
 
