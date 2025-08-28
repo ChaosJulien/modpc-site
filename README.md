@@ -3,7 +3,7 @@
 > 一个由社区驱动的 MODPC 信息支持平台 —— 汇聚可用资源、曝光失信行为、分享使用经验，共建更安全的社区环境。
 
 🌐 **在线访问**：[http://modpc.wurt.fun/](http://modpc.wurt.fun/)  
-🛠️ **技术栈**：纯静态 HTML + CSS，无后端依赖，易于部署与审查  
+🛠️ **技术栈**：纯静态 HTML + CSS + JavaScript，无后端依赖，易于部署与审查  
 👥 **维护者**：[ChaosJulien](https://github.com/ChaosJulien)  
 🔐 **开源协议**：内容遵循知识共享原则（CC-BY-NC-SA），代码 MIT License
 
@@ -43,11 +43,15 @@ modpc-data/
 
 ## 🛠️ 技术特点
 
-- **零依赖**：仅使用 HTML + CSS，无需服务器或数据库
+- **零依赖**：仅使用 HTML + CSS + JavaScript，无需服务器或数据库
 - **高可用**：托管于 GitHub Pages，全球可访问
 - **可审计**：所有内容版本均通过 Git 提交记录可追溯
 - **响应式设计**：适配手机、平板、桌面设备
 - **轻量快速**：加载迅速，适合低带宽环境
+- **安全防护**：
+  - 所有外链（如 Discord）均通过**确认弹窗提示**，防止误跳转
+  - 明确告知用户：Discord 在中国大陆需特殊网络环境才能访问
+  - 不嵌入第三方追踪脚本，保护用户隐私
 
 ---
 
@@ -62,11 +66,12 @@ modpc-data/
 - 界面优化、文案建议、翻译支持
 
 ### 📬 提交方式
-1. **Discord**：加入 [MODPC 数据共享群组](https://discord.gg/DY9TAgwtW6)
-3. **邮件**：[chaosjulien@qq.com](mailto:chaosjulien@qq.com)
-4. **GitHub Issues**：[提交 Issue](https://github.com/ChaosJulien/modpc-data/issues)（推荐证据上传）
+1. **Discord**：点击平台内“加入官方社区”按钮，申请加入 [MODPC 数据共享群组](https://discord.gg/DY9TAgwtW6)（需完成身份验证）  
+   > 提示：Discord 在中国大陆无法直接访问，请确保你具备合规的网络环境。
+2. **邮件**：[chaosjulien@qq.com](mailto:chaosjulien@qq.com)（推荐附带证据）
+3. **GitHub Issues**：[提交 Issue](https://github.com/ChaosJulien/modpc-data/issues)（推荐用于证据上传与公开讨论）
 
-> ⚠️ 请尽量提供**可验证的证据**，我们坚持“有据才录，无证不传”的原则。
+> 请尽量提供**可验证的证据**，我们坚持“有据才录，无证不传”的原则。
 
 ---
 
@@ -75,6 +80,7 @@ modpc-data/
 - 所有信息**仅供参考**，不构成法律或交易建议。
 - 建议结合多方信息判断，避免盲目信任单一来源。
 - 若你被记录在案且认为有误，欢迎联系复核，我们将根据证据决定是否调整。
+- 访问外部链接（如 Discord）前，请确认你了解相关网络政策与安全风险。
 
 ---
 
@@ -83,6 +89,8 @@ modpc-data/
 本平台内容来源于社区公开反馈与用户提交，无法保证 100% 准确性与时效性。因使用本平台信息而导致的任何损失（如财产损失、纠纷等），**维护者不承担任何法律责任**。
 
 我们反对网络暴力，倡导理性讨论，禁止利用本平台进行人身攻击或恶意传播。
+
+所有外链跳转均非强制行为，用户需自行判断风险并承担相应责任。
 
 ---
 
