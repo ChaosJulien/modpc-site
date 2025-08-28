@@ -52,7 +52,7 @@
       Discord 在中国大陆网络环境下 <strong>无法直接访问</strong>，需要特殊网络环境才能打开。
     </p>
     <p style="color: #475569; line-height: 1.6;">
-      如果您无法访问，请联系管理员确认是否有备用交流方式（如 QQ 群、Telegram 等）。
+      如果您无法访问，请联系管理员确认是否有备用交流方式（如 QQ 群、KOOK 等）。
     </p>
     <div class="modal-buttons" style="
       margin-top: 1.5rem; 
