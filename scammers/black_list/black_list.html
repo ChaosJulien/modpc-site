@@ -179,6 +179,65 @@
 		    text-decoration: underline;
 		}
 		
+		.footer-content {
+		    max-width: 960px;
+		    margin: 0 auto;
+		    padding: 0 1rem;
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		    gap: 12px;
+		    flex-wrap: wrap;
+		}
+		
+		.footer-meta {
+		    margin: 0;
+		    text-align: left;
+		}
+		
+		.footer-meta p {
+		    margin: 0.2rem 0;
+		}
+		
+		.footer-sponsor {
+		    display: inline-flex;
+		    align-items: center;
+		    gap: 8px;
+		    padding: 10px 14px;
+		    border-radius: 12px;
+		    background: linear-gradient(120deg, #e0f2fe, #ecfdf3);
+		    border: 1px solid #d1d5db;
+		    color: #0f172a;
+		    font-weight: 700;
+		    text-decoration: none;
+		    box-shadow: 0 8px 22px rgba(15,23,42,0.12);
+		    transition: transform .2s ease, box-shadow .2s ease;
+		}
+		
+		.footer-sponsor .eyebrow {
+		    letter-spacing: .08em;
+		    text-transform: uppercase;
+		    font-size: 0.78rem;
+		    color: #6b7280;
+		}
+		
+		.footer-sponsor .cta {
+		    color: #2563eb;
+		    font-weight: 800;
+		}
+		
+		.footer-sponsor:hover {
+		    transform: translateY(-2px);
+		    box-shadow: 0 12px 28px rgba(15,23,42,0.14);
+		}
+		
+		@media (max-width: 640px) {
+		    .footer-content {
+		        justify-content: center;
+		        text-align: center;
+		    }
+		}
+		
 		@media (max-width: 768px) {
 		    table { font-size: 0.9rem; }
 		    th, td { padding: 0.6rem; }
@@ -313,20 +372,23 @@
 		<p>⚠️ 本名单仅记录社区反馈案例，不保证100%准确，请谨慎判断</p>
 		<p>收录人数：<strong>17 人</strong>｜ 最后更新：<strong>2025年8月31日</strong></p>
 	</div>
-	<!-- 雨云推广广告位 -->
-	<div class="ad-rainyun">
-		<a href="https://www.rainyun.com/ChaosJu_?s=modpc_web" target="_blank" rel="noopener noreferrer">
-			雨云 - 便宜稳定的云服务器（点此领取优惠）
-		</a>
-	</div>
 	<footer>
-		<p>
-			<a href="../scammers.html">&larr; 返回黑名单主页</a> | <a href="../../index.html">返回首页</a>
-		</p>
-		<p style="margin-top: 0.5rem;">
-			<a href="mailto:chaosjulien@qq.com">📮 举报新线索</a> | <a href="#appeal" style="color:#059669;">📝 申请移除记录（申诉）</a>
-		</p>
-		<p style="margin-top: 0.8rem; font-size: 0.85rem; color: #9ca3af;"> © 2025 MODPC 数据共享平台 | 维护者：ChaosJulien | 所有信息均脱敏处理 </p>
+		<div class="footer-content">
+			<div class="footer-meta">
+				<p>
+				<a href="../scammers.html">&larr; 返回黑名单主页</a> | <a href="../../index.html">返回首页</a>
+				</p>
+				<p style="margin-top: 0.5rem;">
+				<a href="mailto:chaosjulien@qq.com">📮 举报新线索</a> | <a href="#appeal" style="color:#059669;">📝 申请移除记录（申诉）</a>
+				</p>
+				<p style="margin-top: 0.8rem; font-size: 0.85rem; color: #9ca3af;"> © 2025 MODPC 数据共享平台 | 维护者：ChaosJulien | 所有信息均脱敏处理 </p>
+			</div>
+			<a class="footer-sponsor" href="https://www.rainyun.com/ChaosJu_?s=modpc_web" target="_blank" rel="noopener noreferrer">
+				<span class="eyebrow">sponsor</span>
+				<span>雨云 · 便宜稳定的云服务器</span>
+				<span class="cta">点此领取优惠</span>
+			</a>
+		</div>
 	</footer>
 </body>
 </html>

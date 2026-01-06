@@ -193,5 +193,56 @@ footer {
   color: var(--muted); 
   display: flex; 
   justify-content: space-between; 
+  align-items: center;
+  gap: 12px;
   flex-wrap: wrap; 
+}
+
+.footer-inner p {
+  margin: 0;
+}
+
+
+/* 雨云赞助位（页脚内联） */
+.footer-sponsor {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: linear-gradient(120deg, rgba(96,165,250,.18), rgba(52,211,153,.12));
+  border: 1px solid rgba(148,163,184,.22);
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 12px 32px rgba(0,0,0,.18);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.footer-sponsor .eyebrow {
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.footer-sponsor .cta {
+  color: var(--brand);
+  font-weight: 800;
+}
+
+.footer-sponsor:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(0,0,0,.22);
+  background: linear-gradient(120deg, rgba(96,165,250,.24), rgba(52,211,153,.16));
+}
+
+:root.light .footer-sponsor {
+  background: linear-gradient(120deg, rgba(37,99,235,.12), rgba(5,150,105,.12));
+  border-color: rgba(0,0,0,.08);
+  box-shadow: 0 10px 26px rgba(0,0,0,.12);
+}
+
+:root.light .footer-sponsor:hover {
+  box-shadow: 0 14px 30px rgba(0,0,0,.14);
 }
